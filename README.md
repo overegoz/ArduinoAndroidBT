@@ -5,8 +5,8 @@
 * 앱: Android, App Inventor
 
 ## 센서부 연결
-![Arduino-BT connection](/imgs/Arduino-BT-connection.JPG){: width="50%" height="50%"}
-![BT module](/imgs/BT-module.JPG){: width="50%" height="50%"}
+![Arduino-BT connection](/imgs/Arduino-BT-connection.JPG)
+![BT module](/imgs/BT-module.JPG)
 
 ## 앱 사용
 1. App Inventor 에서 코딩 <https://appinventor.mit.edu/>
