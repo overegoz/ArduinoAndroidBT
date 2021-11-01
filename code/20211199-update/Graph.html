@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Graph</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+</head>
+<body>
+<div style="height:100%;">
+<canvas id="line1"></canvas>
+</div>
+
+
+<script>
+var ctx = document.getElementById('line1').getContext('2d');
+var chart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: ['N-6', 'N-5', 'N-4', 'N-3', 'N-2', 'N-1', 'N'],
+		datasets: [
+				{
+					label: 'Temperature',
+					backgroundColor: 'transparent',
+					borderColor: "red",
+					data: [0, 0, 0, 0, 0, 0, 0]
+				}
+		]
+	},
+	options: {
+		legend: {
+        			display: false //This will do the task
+      		},
+		//scales: {
+         			//xAxes: [{
+            			//ticks: {
+               				display: false //this will remove only the label
+            			//}
+        			//}]
+      		//}
+	}
+});
+
+function drawNew(){
+	var recv  = window.AppInventor.getWebViewString();
+	//var recv2 = window.AppInventor.getWebViewString();
+	var data = recv.split(",");
+	//if(data.length != recv2){
+	//	return;
+	//}
+	chart.data.labels = data;
+	//for( var i=0; i<data.length;i++){
+	//chart.data.datasets[0].data.shift();
+	//chart.data.datasets[0].data.push(data[i]);
+	chart.data.datasets[0].data=data;	
+	//}
+	//chart.data.labels.shift();
+	chart.update();
+}
+</script>
+</body>
+</html>
